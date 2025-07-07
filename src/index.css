@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Copperplate";
+  src: url(./assets/fonts/cinzel.otf) format("truetype");
+}
+
+@theme {
+  --font-copperplate: "Copperplate", serif;
+}
