@@ -17,7 +17,7 @@ const Nav = () => {
         <span className="uppercase">Loaclisateur de magasin</span>
         <span className="uppercase">Loaclisateur de pays</span>
       </div>
-      <nav className="sticky font-copperplate  bg-white z-30 top-0 flex flex-col px-8 md:px-10 lg:px-16 h-fit justify-center">
+      <nav className="sticky font-copperplate  bg-white z-30 top-0 flex flex-col px-8   h-fit justify-center">
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center gap-6">
             <div
@@ -28,13 +28,13 @@ const Nav = () => {
               <span className="w-4 h-[2px] bg-black rounded"></span>
               <span className="w-4 h-[2px] bg-black rounded"></span>
             </div>
-            <div className="flex items-center   bg-transparent md:border-b border-black h-fit py-2">
+            <div className=" items-center hidden md:flex bg-transparent md:border-b border-gray-200 h-fit py-2">
               <input
                 type="text"
                 placeholder="Search"
-                className="w-full outline-none hidden md:block"
+                className="w-full outline-none  md:block "
               />
-              <Search className="cursor-pointer text-gray-600" />
+              <Search className="cursor-pointer text-gray-600 " />
             </div>
           </div>
           <img
@@ -56,8 +56,8 @@ const Nav = () => {
         </div>
         <div
           className={`absolute top-0 ${
-            active ? "left-0" : "-left-150"
-          }  w-3/5 h-screen flex flex-col  gap-4 bg-white z-20 md:static md:flex-row  md:w-full  md:h-fit md:pb-3`}
+            active ? "left-0" : "-left-250"
+          }  w-3/5 h-screen flex flex-col  gap-4 transition-all duration-300 bg-white z-20 md:static md:flex-row  md:w-full  md:h-fit md:pb-3`}
         >
           <div className="flex items-center justify-between md:hidden px-4 pt-8">
             <House className="cursor-pointer" />
