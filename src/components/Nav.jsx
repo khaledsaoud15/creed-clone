@@ -17,7 +17,7 @@ const Nav = () => {
         <span className="uppercase">Loaclisateur de magasin</span>
         <span className="uppercase">Loaclisateur de pays</span>
       </div>
-      <nav className="sticky font-copperplate  bg-white z-30 top-0 flex flex-col px-8   h-fit justify-center">
+      <nav className="sticky font-copperplate  bg-white z-30 top-0 flex flex-col px-4 md:px-8   h-fit justify-center">
         <div className="flex items-center justify-between w-full">
           <div className="flex items-center gap-6">
             <div

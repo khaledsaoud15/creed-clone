@@ -11,7 +11,7 @@ const Hero = () => {
         className="w-full aspect-auto"
         controls
       ></video>
-      <div className="flex flex-col gap-5 w-full px-8 static text-center md:absolute md:text-white md:w-1/3 md:left-10 md:top-55">
+      <div className="flex flex-col gap-5 w-full px-4 md:px-8 static text-center md:absolute md:text-white md:w-1/3 md:left-10 md:top-55">
         <h1 className="text-4xl md:text-4xl  font-copperplate">
           Les Creed Classics
         </h1>
@@ -28,7 +28,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      <p className="font-copperplate px-8 text-sm md:text-lg font-medium">
+      <p className="font-copperplate px-4 md:px-8 text-sm md:text-lg font-medium">
         Maison de parfums authentique, The House of Creed se consacre à la
         création de fragrances artisanales originales pour hommes et pour
         femmes, confectionnées avec les meilleurs ingrédients que le monde
