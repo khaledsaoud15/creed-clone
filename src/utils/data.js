@@ -30,4 +30,14 @@ export const products = [
       "Faites sensation du bureau jusqu’à l’afterwork, et au-delà, avec Aventus. Parfum Creed le plus prisé, il séduit par son ananas dynamique relevé d’une touche fumée raffinée.",
     mlPrice: ["5.50", "4.40", "3.10", "2.60", "1.72"],
   },
+  {
+    id: 1,
+    image:
+      "https://static.thcdn.com/images/small/webp//productimg/original/12870029-1435132313196185.jpg",
+    title: "Aventus",
+    price: [165, 220, 290, 310, 495, 845],
+    description:
+      "Faites sensation du bureau jusqu’à l’afterwork, et au-delà, avec Aventus. Parfum Creed le plus prisé, il séduit par son ananas dynamique relevé d’une touche fumée raffinée.",
+    mlPrice: ["5.50", "4.40", "3.10", "2.60", "1.72"],
+  },
 ];

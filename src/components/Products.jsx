@@ -5,7 +5,7 @@ const Products = () => {
   return (
     <section className="h-fit w-full space-y-8 py-10 font-copperplate">
       <h2 className="text-2xl md:text-4xl px-4 md:px-8 ">Meilleures ventes</h2>
-      <grid className="grid grid-cols-1 w-full gap-6 lg:grid-cols-3">
+      <grid className="grid grid-cols-2 w-full gap-6 lg:grid-cols-3">
         {products.map((product) => (
           <div
             key={product.id}
