@@ -32,7 +32,7 @@ const Advertise = ({ img, text, desc }) => {
         </h3>
         <p
           className={`text-sm lg:text-md ${
-            isWide ? "text-white" : "text-black"
+            isWide ? "text-white" : "text-gray-500"
           }`}
         >
           {desc}

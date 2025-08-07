@@ -41,3 +41,27 @@ export const products = [
     mlPrice: ["5.50", "4.40", "3.10", "2.60", "1.72"],
   },
 ];
+
+export const cat = [
+  {
+    id: 1,
+    image:
+      "https://static.thcdn.com/images/small/webp/widgets/216-fr/01/original-atomiser_2-090801.png",
+    title: "Pour vous parfumer en déplacement",
+    category: "les petites luxes",
+  },
+  {
+    id: 2,
+    image:
+      "https://static.thcdn.com/images/small/webp/widgets/216-fr/09/original-candle_2-090809.png",
+    title: "Pour Faire voyager vos sens",
+    category: "les parfumes d'ambiance",
+  },
+  {
+    id: 1,
+    image:
+      "https://static.thcdn.com/images/small/webp/widgets/216-fr/14/original-bb_2-090814.png",
+    title: "Pour revitaliser la peau",
+    category: "les collections Bain & corps",
+  },
+];

@@ -1,5 +1,5 @@
 import React from "react";
-import { offers } from "../utils/data";
+import { offers } from "../../utils/data";
 
 const Offers = () => {
   return (
