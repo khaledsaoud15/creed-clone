@@ -4,6 +4,7 @@ import Offers from "../components/home/Offers";
 import Products from "../components/Products";
 import Advertise from "../components/home/Advertise";
 import Categories from "../components/home/Categories";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
         text="Votre histoire de parfum d'ete"
         desc="Entrez dans des journées ensoleillées avec les parfums d'été de The House of Creed, conçus pour vous transporter dans des contrées exotiques. Pour en savoir plus, consultez le blog et découvrez votre parfum inspiré par le soleil."
       />
+   
     </div>
   );
 };
