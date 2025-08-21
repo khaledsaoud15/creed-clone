@@ -5,85 +5,70 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   useEffect(() => {
-    gsap.fromTo(
-      "#aventus",
-      { x: -150, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#hero",
-          start: "top center",
-          end: "bottom center",
-          scrub: true,
-        },
-      }
-    );
+    const animations = [
+      { id: "#aventus", x: -150 },
+      { id: "#her", x: 150 },
+      { id: "#jasmin", x: 100 },
+      { id: "#mint", x: -100 },
+    ];
 
-    gsap.fromTo(
-      "#her",
-      { x: 150, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#hero",
-          start: "top center",
-          end: "bottom center",
-          scrub: true,
-        },
-      }
-    );
+    animations.forEach(({ id, x }) => {
+      gsap.fromTo(
+        id,
+        { x, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: "#hero",
+            start: "top center",
+            end: "bottom center",
+            scrub: true,
+          },
+        }
+      );
+    });
 
-    gsap.fromTo(
-      "#jasmin",
-      { x: 100, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#hero",
-          start: "top center",
-          end: "bottom center",
-          scrub: true,
-        },
-      }
-    );
+    const textAnimation = [
+      { id: "#headText", x: -100 },
+      { id: "#headSpan", x: 100 },
+    ];
 
-    gsap.fromTo(
-      "#mint",
-      { x: -100, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: "#hero",
-          start: "top center",
-          end: "bottom center",
-          scrub: true,
+    textAnimation.forEach(({ id, x }) => {
+      gsap.fromTo(
+        id,
+        {
+          x,
+          opacity: 0,
         },
-      }
-    );
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.inOut",
+        }
+      );
+    });
   }, []);
 
   return (
     <section
       id="hero"
-      className="px-8 md:px-10 lg:px-24 flex flex-col gap-12 lg:gap-16 py-18 h-fit items-center bg-gray-50"
+      className="px-8 md:px-10 lg:px-24 flex flex-col gap-12 lg:gap-16 py-18 h-fit items-center bg-gray-50 overflow-x-hidden"
     >
       <div className="flex flex-col gap-2 text-center">
-        <h1 className="text-[43px]  font-inknut uppercase md:text-8xl lg:text-9xl">
+        <h1
+          id="headText"
+          className="text-[43px]  font-inknut uppercase md:text-8xl lg:text-9xl"
+        >
           The house of creed
         </h1>
-        <span className="text-base font-medium font-inknut md:text-2xl lg:text-3xl">
+        <span
+          id="headSpan"
+          className="text-base font-medium font-inknut md:text-2xl lg:text-3xl"
+        >
           Since 1760, crafting fragrances of distinction
         </span>
       </div>
