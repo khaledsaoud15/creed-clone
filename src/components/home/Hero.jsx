@@ -1,39 +1,128 @@
-import React from "react";
+import gsap from "gsap";
+import React, { useEffect } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
+  useEffect(() => {
+    gsap.fromTo(
+      "#aventus",
+      { x: -150, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#hero",
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      "#her",
+      { x: 150, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#hero",
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      "#jasmin",
+      { x: 100, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#hero",
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      "#mint",
+      { x: -100, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: "#hero",
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+        },
+      }
+    );
+  }, []);
+
   return (
-    <section className="relative flex flex-col gap-8 w-full  h-fit pb-8">
-      <video
-        src="./assets/images/creed-header.mp4"
-        autoPlay
-        loop
-        muted
-        className="w-full aspect-auto"
-        controls
-      ></video>
-      <div className="flex flex-col gap-5 w-full px-4 md:px-8 static text-center md:absolute md:text-white md:w-1/3 md:left-10 md:top-55">
-        <h1 className="text-4xl md:text-4xl  font-copperplate">
-          Les Creed Classics
+    <section
+      id="hero"
+      className="px-8 md:px-10 lg:px-24 flex flex-col gap-16 py-18 h-fit items-center bg-gray-50"
+    >
+      <div className="flex flex-col gap-2 text-center">
+        <h1 className="text-5xl font-inknut uppercase md:text-8xl lg:text-9xl">
+          The house of creed
         </h1>
-        <p className="text-sm leading-6 md:text-md font-copperplate">
-          Trouvez le grand classique de Creed à votre image : un parfum conçu
-          sur mesure, à porter avec assurance.
-        </p>
-        <div className="flex flex-col gap-4 w-full">
-          <button className="w-full py-3 tracking-widest bg-black text-white font-copperplate md:text-black md:bg-white">
-            En savoir plus
-          </button>
-          <button className="w-full py-3 tracking-widest bg-black text-white font-copperplate md:text-black md:bg-white">
-            Voir les creeds classics
-          </button>
-        </div>
+        <span className="text-lg font-medium font-inknut md:text-2xl lg:text-3xl">
+          Since 1760, crafting fragrances of distinction
+        </span>
       </div>
-      <p className="font-copperplate px-4 md:px-8 text-sm md:text-lg font-medium">
-        Maison de parfums authentique, The House of Creed se consacre à la
-        création de fragrances artisanales originales pour hommes et pour
-        femmes, confectionnées avec les meilleurs ingrédients que le monde
-        puisse offrir.
-      </p>
+
+      <div className="relative w-fit h-full flex items-center justify-center lg:w-2/5">
+        <img
+          src="./assets/images/silver.png"
+          alt=""
+          className="w-full h-full object-cover z-30"
+        />
+        <img
+          id="aventus"
+          src="./assets/images/aventus.png"
+          alt=""
+          className="w-64 h-64 absolute top-24 -left-8 lg:top-36 z-10 opacity-0"
+        />
+        <img
+          id="her"
+          src="./assets/images/forher.png"
+          alt=""
+          className="w-64 h-64 absolute top-24 -right-8 lg:top-36 z-10 opacity-0"
+        />
+        <img
+          id="jasmin"
+          src="./assets/images/jasmine.png"
+          alt=""
+          className="absolute top-40 -right-18 w-full lg:-right-36 opacity-0"
+        />
+        <img
+          id="mint"
+          src="./assets/images/mint@2x.png"
+          alt=""
+          className="absolute top-40 -left-18 w-full opacity-0"
+        />
+      </div>
+
+      <button className="w-fit px-10 py-4 bg-yellow-500 font-inknut rounded shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500 z-20">
+        SHOP NOW
+      </button>
     </section>
   );
 };

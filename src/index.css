@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Copperplate";
-  src: url(./assets/fonts/cinzel.otf) format("truetype");
-}
+/* @font-face {
+  font-family: "Inknut Antiqua";
+  src: url("./fonts/inknut.ttf") format("truetype");
+} */
 
 @theme {
-  --font-copperplate: "Copperplate", serif;
+  --font-inknut: "Inknut Antiqua", serif;
 }
