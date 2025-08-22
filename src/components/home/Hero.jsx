@@ -105,7 +105,7 @@ const Hero = () => {
         />
       </div>
 
-      <button className="w-fit px-10 py-4 bg-yellow-500 font-inknut rounded shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500 z-20">
+      <button className="w-fit mt-auto px-10 py-4 bg-yellow-500 font-inknut rounded shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500 z-20">
         SHOP NOW
       </button>
     </section>

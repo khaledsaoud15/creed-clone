@@ -5,8 +5,8 @@ const Navbar = () => {
   const [active, setActive] = useState(false);
 
   return (
-    <nav className="flex items-center justify-between relative px-8 md:px-12 lg:px-24 h-24 w-full md:static">
-      <h1 className="font-inknut text-xl font-bold ">CREED</h1>
+    <nav className="flex items-center justify-between relative px-8 md:px-12 lg:px-24 h-24 w-full md:static z-50">
+      <h1 className="font-inknut text-xl font-bold">CREED</h1>
 
       <div
         className={`absolute top-full left-0 flex flex-col pl-8 gap-4 bg-white overflow-hidden transition-all duration-300 ${

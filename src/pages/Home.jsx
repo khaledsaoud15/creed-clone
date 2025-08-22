@@ -1,9 +1,11 @@
 import Hero from "../components/home/Hero";
+import Newcollection from "../components/home/Newcollection";
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
       <Hero />
+      <Newcollection />
     </div>
   );
 };

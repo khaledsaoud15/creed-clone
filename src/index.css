@@ -7,4 +7,9 @@
 
 @theme {
   --font-inknut: "Inknut Antiqua", serif;
+  --font-header: 34px;
+}
+
+.swiper-pagination {
+  bottom: 15% !important;
 }
