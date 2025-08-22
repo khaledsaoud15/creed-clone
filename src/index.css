@@ -13,3 +13,7 @@
 .swiper-pagination {
   bottom: 5% !important;
 }
+
+.swiper-pagination-bullet-active {
+  background: yellow !important;
+}

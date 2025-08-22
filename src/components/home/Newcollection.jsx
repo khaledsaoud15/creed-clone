@@ -10,7 +10,7 @@ const Newcollection = () => {
   return (
     <section
       id="collection"
-      className="relative w-full h-fit px-8 md:px-12 lg:px-24 py-16 flex flex-col gap-18"
+      className="relative  w-full h-fit px-8 md:px-12 lg:px-24 py-16 flex flex-col gap-8"
     >
       <h1
         id="text"
@@ -24,7 +24,10 @@ const Newcollection = () => {
         slidesPerView={3}
         spaceBetween={40}
         loop={true}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: true,
+        }}
         pagination={{ clickable: true }}
         breakpoints={{
           320: { slidesPerView: 1, spaceBetween: 20 },
@@ -35,14 +38,14 @@ const Newcollection = () => {
       >
         {products.map((p, i) => (
           <SwiperSlide key={i}>
-            <div className="p-3 md:p-6 rounded w-full bg-gray-200 h-fit flex flex-col gap-6">
+            <div className="p-3 group cursor-pointer md:p-6 rounded w-full bg-gray-100 h-fit flex flex-col gap-6">
               <img
                 src={p.image}
                 alt={p.title}
                 loading="lazy"
-                className="w-full h-[10vh] md:h-[20vh] lg:h-[30vh] lg:w-4/5 object-cover mx-auto"
+                className="w-1/2 h-[25vh] md:h-[20vh] lg:h-[30vh] lg:w-2/5 object-cover mx-auto group-hover:scale-105 transition-all duration-300"
               />
-              <div className="flex flex-col md:flex-row gap-3 items-center w-full justify-between">
+              <div className="flex flex-col md:flex-row gap-1 items-center w-full justify-between">
                 <h3 className="font-bold text-lg md:text-xl lg:text-2xl font-inknut">
                   {p.title.length > 10 ? p.title.slice(0, 10) + "..." : p.title}
                 </h3>

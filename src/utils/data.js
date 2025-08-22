@@ -7,8 +7,7 @@ export const products = [
     size: [30, 50, 100, 220, 450],
     description:
       "Faites sensation du bureau jusqu’à l’afterwork, et au-delà, avec Aventus. Parfum Creed le plus prisé, il séduit par son ananas dynamique relevé d’une touche fumée raffinée.",
-    image:
-      "https://static.thcdn.com/images/small/webp//productimg/original/12870029-1435132313196185.jpg",
+    image: "./assets/images/aventuscollection.png",
 
     topnotes: [
       {
@@ -69,8 +68,7 @@ export const products = [
     size: [30, 50, 100, 220, 450],
     description:
       "Faites sensation du bureau jusqu’à l’afterwork, et au-delà, avec Aventus. Parfum Creed le plus prisé, il séduit par son ananas dynamique relevé d’une touche fumée raffinée.",
-    image:
-      "https://static.thcdn.com/images/small/webp//productimg/original/12870029-1435132313196185.jpg",
+    image: "./assets/images/aventuscollection.png",
 
     topnotes: [
       {
@@ -131,8 +129,7 @@ export const products = [
     size: [30, 50, 100, 220],
     description:
       "Créé pour célébrer la force et la féminité, Aventus for Her dévoile un parfum fruité-floral irrésistible.",
-    image:
-      "https://static.thcdn.com/images/large/original//productimg/1600/1600/12852849-9815156414072715.jpg",
+    image: "./assets/images/forhercreed.png",
 
     topnotes: [
       {
@@ -185,8 +182,7 @@ export const products = [
     size: [30, 50, 100],
     description:
       "Un parfum classique, boisé et frais, qui évoque les paysages verdoyants d’Irlande.",
-    image:
-      "https://i.pinimg.com/1200x/15/c6/27/15c627ee1c984d541307a8bd61909f5d.jpg",
+    image: "./assets/images/green.png",
 
     topnotes: [
       {
