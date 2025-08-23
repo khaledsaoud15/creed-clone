@@ -1,22 +1,42 @@
-import { Eye } from "lucide-react";
 import React from "react";
-import { BsEye } from "react-icons/bs";
-import { GoEyeClosed } from "react-icons/go";
+import { FaUser } from "react-icons/fa";
 import { IoMdEye } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <div className="flex flex-col h-fit py-8 absolute top-1/2 left-1/2 -translate-1/2 w-full  px-8 gap-6 md:w-1/3">
         <div className="space-y-2">
-          <h1 className="text-3xl font-inknut font-bold">Welcome back!</h1>
-          <span className="text-gray-500">Please verify your information</span>
+          <h1 className="text-3xl font-inknut font-bold">Create an account</h1>
+          <span className="text-gray-500">
+            Please fill in your infrormation
+          </span>
         </div>
         <div className="flex flex-col gap-4 w-full">
+          <button className="flex items-center gap-2 rounded border shadow-lg justify-center py-3 font-medium cursor-pointer hover:bg-gray-100 active:bg-white active:ring-offset-2 active:ring-2 active:ring-gray-500 active:text-gray-500 bg-white">
+            <img
+              src="./assets/images/google-icon.png"
+              alt="google icon"
+              className="w-7 object-cover h-auto"
+              loading="lazy"
+            />
+            Continue with Google
+          </button>
           <div className="space-y-2">
-            <h4 className="font-medium text-base">Email:</h4>
+            <h4 className="font-medium text-base">Name*:</h4>
+            <div className="w-full rounded border border-gray-500 flex items-center justify-between px-4">
+              <input
+                type="text"
+                className="py-2 w-4/5 outline-0"
+                placeholder="John Doe"
+              />
+              <FaUser />
+            </div>
+          </div>
+          <div className="space-y-2">
+            <h4 className="font-medium text-base">Email*:</h4>
             <div className="w-full rounded border border-gray-500 flex items-center justify-between px-4">
               <input
                 type="email"
@@ -27,7 +47,7 @@ const Login = () => {
             </div>
           </div>
           <div className="space-y-2">
-            <h4 className="font-medium text-base">Password:</h4>
+            <h4 className="font-medium text-base">Password*:</h4>
             <div className="w-full rounded border border-gray-500 flex items-center justify-between px-4">
               <input
                 type="password"
@@ -42,41 +62,28 @@ const Login = () => {
             <button className="w-full py-3 rounded bg-yellow-500  shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500 font-medium">
               Log in
             </button>
-            <button className="flex items-center gap-2 rounded border shadow-lg justify-center py-3 font-medium cursor-pointer hover:bg-gray-100 active:bg-white active:ring-offset-2 active:ring-2 active:ring-gray-500 active:text-gray-500 bg-white">
-              <img
-                src="./assets/images/google-icon.png"
-                alt="google icon"
-                className="w-7 object-cover h-auto"
-                loading="lazy"
-              />
-              Continue with Google
-            </button>
+
             <span className="text-gray-500">
-              Don't have an account?{" "}
-              <Link to="/register" className="font-medium underline text-black">
-                Sign up
+              Already have an account?{" "}
+              <Link to="/login" className="font-medium underline text-black">
+                Log in
               </Link>
             </span>
           </div>
         </div>
       </div>
       <img
-        src="./assets/images/mint@2x.png"
+        src="./assets/images/green.png"
         alt=""
-        className="absolute -top-32 -left-36 w-full h-auto object-cover md:w-1/2 md:-top-64"
+        className="absolute hidden md:block h-auto object-cover md:w-1/5 md:-bottom-10 md:-left-15"
       />
       <img
-        src="./assets/images/jasmine.png"
+        src="./assets/images/lime.png"
         alt=""
-        className="absolute hidden md:block h-auto object-cover  md:w-1/2 md:-bottom-80 md:-right-50"
-      />
-      <img
-        src="./assets/images/forher.png"
-        alt=""
-        className="w-1/4 absolute hidden md:block h-auto -bottom-10 -right-0 -rotate-12"
+        className="w-full h-auto absolute -top-34 -right-34 object-cover -z-10 md:-top-55 md:w-1/2 md:-right-55"
       />
     </section>
   );
 };
 
-export default Login;
+export default Register;
