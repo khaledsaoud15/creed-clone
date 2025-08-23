@@ -41,7 +41,7 @@ const Login = () => {
             <button className="w-full py-3 rounded bg-yellow-500  shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500 font-medium">
               Log in
             </button>
-            <button className="flex items-center gap-2 rounded border shadow-lg justify-center py-3 font-medium cursor-pointer hover:bg-gray-100 active:bg-white active:ring-offset-2 active:ring-2 active:ring-gray-500 active:text-gray-500">
+            <button className="flex items-center gap-2 rounded border shadow-lg justify-center py-3 font-medium cursor-pointer hover:bg-gray-100 active:bg-white active:ring-offset-2 active:ring-2 active:ring-gray-500 active:text-gray-500 bg-white">
               <img
                 src="./assets/images/google-icon.png"
                 alt="google icon"
@@ -50,13 +50,27 @@ const Login = () => {
               />
               Continue with Google
             </button>
+            <span className="text-gray-500">
+              Don't have an account?{" "}
+              <span className="font-medium underline text-black">Sign up</span>
+            </span>
           </div>
         </div>
       </div>
       <img
         src="./assets/images/mint@2x.png"
         alt=""
-        className="absolute -top-38 -left-36 w-full h-auto object-cover"
+        className="absolute -top-32 -left-36 w-full h-auto object-cover md:w-1/2 md:-top-64"
+      />
+      <img
+        src="./assets/images/jasmine.png"
+        alt=""
+        className="absolute -bottom-32 -right-36 w-full h-auto object-cover -z-10 md:w-1/2 md:-bottom-80 md:-right-50"
+      />
+      <img
+        src="./assets/images/forher.png"
+        alt=""
+        className="w-1/4 absolute hidden md:block h-auto -bottom-10 -right-0 -rotate-12"
       />
     </section>
   );
