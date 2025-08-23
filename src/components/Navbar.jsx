@@ -1,5 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
@@ -22,9 +23,12 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center gap-4">
-        <button className="w-fit px-4 py-2 bg-yellow-500 rounded shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500">
+        <Link
+          to="/login"
+          className="w-fit px-4 py-2 bg-yellow-500 rounded shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500"
+        >
           Log in
-        </button>
+        </Link>
         {active ? (
           <X
             onClick={() => setActive(false)}
