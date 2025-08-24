@@ -43,7 +43,7 @@ export const products = [
     ],
     basenotes: [
       {
-        img: "https://i.pinimg.com/736x/21/d7/5e/21d75e40f40b703b822c9888b40f8dd7.jpg",
+        img: "https://i.pinimg.com/1200x/e6/2d/79/e62d7909e25585c0cd6e5845cb47fb2d.jpg",
         value: "Oakmoss",
       },
       {
