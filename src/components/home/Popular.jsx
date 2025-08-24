@@ -1,5 +1,6 @@
 import React from "react";
 import { products } from "../../utils/data";
+import { Link } from "react-router-dom";
 
 const Popular = () => {
   return (
@@ -41,9 +42,11 @@ const Popular = () => {
                 for {p.size[0]}ml
               </span>
             </div>
-            <button className="w-full py-2 bg-yellow-500 rounded shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500 font-medium">
-              see more
-            </button>
+            <Link to={`/product/${p.id}`}>
+              <button className="w-full py-2 bg-yellow-500 rounded shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500 font-medium">
+                see more
+              </button>
+            </Link>
           </div>
         ))}
       </div>
