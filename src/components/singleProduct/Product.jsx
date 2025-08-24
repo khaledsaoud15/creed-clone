@@ -31,8 +31,11 @@ const Product = () => {
           <span>30ml</span>
         </div>
         <div className="py-5 w-full flex flex-wrap items-center gap-3 border-t border-gray-500">
-          {sizes.map((s) => (
-            <span className="p-2 border font-inknut text-sm border-gray-600 rounded cursor-pointer shadow">
+          {sizes.map((s, i) => (
+            <span
+              key={i}
+              className="p-2 border font-inknut text-sm border-gray-600 rounded cursor-pointer shadow"
+            >
               {s}
             </span>
           ))}
