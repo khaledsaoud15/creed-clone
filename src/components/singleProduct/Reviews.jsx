@@ -1,7 +1,3 @@
-import React from "react";
-import { BsHeart } from "react-icons/bs";
-import { FaHeart } from "react-icons/fa";
-
 const Reviews = () => {
   return (
     <section className="w-full h-fit  flex flex-col gap-6">
