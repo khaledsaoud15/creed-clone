@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Notes from "../components/singleProduct/Notes";
 import Reviews from "../components/singleProduct/Reviews";
 import Proposal from "../components/singleProduct/Proposal";
+import Footer from "../components/Footer";
 
 const Productpage = () => {
   return (
@@ -17,6 +18,7 @@ const Productpage = () => {
         <Reviews />
         <Proposal />
       </section>
+      <Footer />
     </div>
   );
 };

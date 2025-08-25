@@ -7,14 +7,14 @@ import "swiper/css/pagination";
 
 const Proposal = () => {
   return (
-    <section className="flex flex-col gap-8 w-full h-fit">
+    <section className="relative flex flex-col gap-8 w-full h-fit">
       <h1 className="w-fit mx-auto text-xl md:text-2xl lg:text-3xl font-inknut font-bold">
         Your next purchase
       </h1>
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={10}
-        slidesPerView={3}
+        slidesPerView={4}
         breakpoints={{
           350: {
             slidesPerView: 2,
@@ -25,9 +25,10 @@ const Proposal = () => {
             spaceBetween: 90,
           },
         }}
+        loop={true}
         autoplay={{ delay: 3000, disableOnInteraction: true }}
         pagination={{ clickable: true }}
-        className="overflow-hidden w-full"
+        className=" w-full !static"
       >
         {products.map((p, i) => (
           <SwiperSlide key={i}>
