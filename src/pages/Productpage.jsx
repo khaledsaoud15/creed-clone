@@ -3,6 +3,7 @@ import Product from "../components/singleProduct/Product";
 import Navbar from "../components/Navbar";
 import Notes from "../components/singleProduct/Notes";
 import Reviews from "../components/singleProduct/Reviews";
+import Proposal from "../components/singleProduct/Proposal";
 
 const Productpage = () => {
   return (
@@ -14,6 +15,7 @@ const Productpage = () => {
           <Notes />
         </div>
         <Reviews />
+        <Proposal />
       </section>
     </div>
   );
