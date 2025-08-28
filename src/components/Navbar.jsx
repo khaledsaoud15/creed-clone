@@ -14,11 +14,11 @@ const Navbar = () => {
           active ? "h-fit py-4" : "h-0"
         } w-full md:static md:flex-row md:gap-10 md:items-center md:w-fit md:h-auto md:py-0`}
       >
-        <a href="" className="font-medium underline">
+        <Link to="/" className="font-medium underline">
           Home
-        </a>
+        </Link>
         <a href="">New</a>
-        <a href="">Perfumes</a>
+        <Link to="/perfumes">Perfumes</Link>
         <a href="">Accessories</a>
       </div>
 

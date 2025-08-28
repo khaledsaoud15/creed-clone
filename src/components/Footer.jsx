@@ -54,25 +54,25 @@ const Footer = () => {
         </span>
         <div className="flex items-center gap-3">
           <img
-            src="./assets/images/visa.png"
+            src="../assets/images/visa.png"
             alt="visa"
             loading="lazy"
             className="w-10 h-auto object-cover"
           />
           <img
-            src="./assets/images/visa.png"
+            src="../assets/images/visa.png"
             alt="visa"
             loading="lazy"
             className="w-10 h-auto object-cover"
           />
           <img
-            src="./assets/images/visa.png"
+            src="../assets/images/visa.png"
             alt="visa"
             loading="lazy"
             className="w-10 h-auto object-cover"
           />
           <img
-            src="./assets/images/visa.png"
+            src="../assets/images/visa.png"
             alt="visa"
             loading="lazy"
             className="w-10 h-auto object-cover"

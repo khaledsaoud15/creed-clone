@@ -5,6 +5,7 @@ import Register from "./pages/Register";
 import Productpage from "./pages/Productpage";
 import ScrollToTop from "./utils/ScrollToTop";
 import useLenis from "./hooks/useLenis";
+import Perfumes from "./pages/Perfumes";
 
 const App = () => {
   useLenis();
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/product/:id" element={<Productpage />} />
+        <Route path="/perfumes" element={<Perfumes />} />
       </Routes>
     </BrowserRouter>
   );
