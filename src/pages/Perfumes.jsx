@@ -8,6 +8,7 @@ const Perfumes = () => {
     <div>
       <Navbar />
       <PerfumeHeader />
+
       <Filters />
     </div>
   );

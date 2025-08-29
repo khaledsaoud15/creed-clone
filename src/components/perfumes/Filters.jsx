@@ -5,13 +5,13 @@ const Filters = () => {
   return (
     <section className="px-8 md:px-12 lg:px-24 py-8 flex items-center justify-between">
       <div className="space-x-2 lg:space-x-8">
-        <select className="border-b  py-2 outline-none">
+        <select className="border-b  py-2 outline-none ">
           <option value="time" disabled selected>
             Sort by
           </option>
-          <option value="newest">Newest Arrivals</option>
-          <option value="popular">Most Popular</option>
-          <option value="discount">Best Discounts</option>
+          <option value="newest">Newest</option>
+          <option value="popular">Popular</option>
+          <option value="discount">Discounts</option>
         </select>
         <select className="border-b  py-2 outline-none">
           <option value="category" disabled selected>
