@@ -3,7 +3,7 @@ import { products } from "../../utils/data";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 const ProductsPagination = () => {
-  const itemsPerPage = 6;
+  const itemsPerPage = 8;
   const totalPages = Math.ceil(products.length / itemsPerPage);
   const [page, setPage] = useState(1);
 
@@ -19,8 +19,8 @@ const ProductsPagination = () => {
   const endIndex = startIndex + itemsPerPage;
 
   return (
-    <section className="px-8 md:px-12 lg:px-24 space-y-8 py-8">
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-10 w-full h-fit">
+    <section className="px-8 md:px-12 lg:px-24 space-y-8 pt-8 pb-22">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 w-full h-fit">
         {products.slice(startIndex, endIndex).map((p, i) => (
           <div
             key={i}
@@ -30,7 +30,7 @@ const ProductsPagination = () => {
               src={p.image}
               alt={p.title}
               loading="lazy"
-              className="w-1/2 h-[13vh] md:h-[20vh] lg:h-[25vh] object-cover mx-auto"
+              className="w-1/2 h-[13vh] md:h-[20vh] lg:h-[30vh] object-cover mx-auto"
             />
             <div className="flex flex-col gap-2 text-center">
               <h1 className="text-lg md:text-xl lg:text-2xl font-inknut font-medium">

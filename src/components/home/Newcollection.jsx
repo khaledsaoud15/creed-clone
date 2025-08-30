@@ -22,7 +22,7 @@ const Newcollection = () => {
               src={p.image}
               alt={p.title}
               loading="lazy"
-              className="w-1/2 h-[13vh] md:h-[20vh] lg:h-[25vh] object-cover mx-auto"
+              className="w-1/2 h-[13vh] md:h-[20vh] lg:h-[30vh]  object-cover mx-auto"
             />
             <div className="flex flex-col gap-2 text-center">
               <h1 className="text-lg md:text-xl lg:text-2xl font-inknut font-medium">

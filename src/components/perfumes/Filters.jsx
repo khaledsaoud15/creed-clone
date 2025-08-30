@@ -4,9 +4,9 @@ import React from "react";
 const Filters = () => {
   return (
     <section className="px-8 md:px-12 lg:px-24 py-8 flex items-center justify-between">
-      <div className="space-x-2 lg:space-x-8">
+      <div className="space-x-4 lg:space-x-8">
         <select className="border-b  py-2 outline-none ">
-          <option value="time" disabled selected>
+          <option defaultValue="time" disabled>
             Sort by
           </option>
           <option value="newest">Newest</option>
@@ -14,7 +14,7 @@ const Filters = () => {
           <option value="discount">Discounts</option>
         </select>
         <select className="border-b  py-2 outline-none">
-          <option value="category" disabled selected>
+          <option defaultValue="category" disabled>
             Category
           </option>
           <option value="men">Men</option>
