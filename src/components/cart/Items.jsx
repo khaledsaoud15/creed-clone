@@ -6,7 +6,7 @@ const Items = () => {
     <div className="flex flex-col gap-4 lg:w-3/4">
       <div className="overflow-x-auto ">
         <table className="table-auto w-full min-w-max border-collapse">
-          <thead className="bg-gray-200">
+          <thead className="bg-gray-100">
             <tr className="text-center">
               <th className="py-5 px-3  border-b border-gray-300">Image</th>
               <th className="py-5 px-3 border-b border-gray-300">Title</th>
