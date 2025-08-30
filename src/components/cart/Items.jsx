@@ -16,7 +16,7 @@ const Items = () => {
             </tr>
           </thead>
           <tbody>
-            {[1, 2, 3, 4, 5].map((_, i) => (
+            {[1, 2, 3].map((_, i) => (
               <tr
                 key={i}
                 className="border-b hover:bg-gray-50 text-center transition-colors"
@@ -54,7 +54,7 @@ const Items = () => {
             placeholder="Enter coupon code"
             className="rounded outline-0 border border-gray-500 py-2 px-4 w-4/5"
           />
-          <button className="bg-blue-500 text-white py-2 px-4 rounded w-1/5 cursor-pointer hover:bg-blue-700 active:bg-white active:ring-2 active:ring-offset-2 active:ring-blue-500 active:text-blue-500 font-medium">
+          <button className="bg-blue-500 text-white py-2  rounded w-1/5 cursor-pointer hover:bg-blue-700 active:bg-white active:ring-2 active:ring-offset-2 active:ring-blue-500 active:text-blue-500 font-medium">
             Apply
           </button>
         </div>
