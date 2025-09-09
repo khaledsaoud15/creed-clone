@@ -1,5 +1,14 @@
-import { products } from "../../utils/data";
+import { Link } from "react-router-dom";
+import { useFetch } from "../../hooks/useFetch";
+
 const Newcollection = () => {
+  const { data, isLoading, error } = useFetch("/products/get?new=true", {
+    new: true,
+  });
+
+  if (isLoading) return <p>is Loading...</p>;
+  if (error) return <p>{error}</p>;
+
   return (
     <section
       id="collection"
@@ -13,7 +22,7 @@ const Newcollection = () => {
       </h1>
 
       <div className="w-full h-fit !static grid grid-cols-2 lg:grid-cols-4 gap-8">
-        {products.map((p, i) => (
+        {data?.map((p, i) => (
           <div
             className=" w-full h-fit flex flex-col gap-4 p-2 md:p-4 lg:p-6 rounded hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
             key={i}
@@ -36,9 +45,11 @@ const Newcollection = () => {
                 for {p.size[0]}ml
               </span>
             </div>
-            <button className="w-full py-2 bg-yellow-500 rounded shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500 font-medium">
-              see more
-            </button>
+            <Link to={`/product/${p._id}`}>
+              <button className="w-full py-2 bg-yellow-500 rounded shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500 font-medium">
+                see more
+              </button>
+            </Link>
           </div>
         ))}
       </div>

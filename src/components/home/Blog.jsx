@@ -10,24 +10,26 @@ const Blog = () => {
       >
         BLOG
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid  grid-cols-3 gap-4">
         {blogposts.map((post, i) => (
           <div
-            className="w-auto h-fit flex flex-col gap-2 items-center"
+            className="w-auto h-fit flex flex-col gap-2 items-center "
             key={i}
           >
             <img
               src={post.img}
               alt={post.title}
               loading="lazy"
-              className="w-3/4 h-auto object-cover"
+              className="w-4/5 h-auto object-cover lg:w-1/2"
             />
-            <h2 className="text-base md:text-xl font-bold font-inknut">
+            <h2 className="text-xs md:text-xl font-bold font-inknut">
               {post.title.length > 20
                 ? post.title.slice(0, 20) + "..."
                 : post.title}
             </h2>
-            <span className="text-gray-500">{post.text}</span>
+            <span className="text-gray-500 text-xs md:text-base">
+              {post.text}
+            </span>
           </div>
         ))}
       </div>

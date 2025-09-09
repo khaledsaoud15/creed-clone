@@ -1,7 +1,21 @@
 import React from "react";
 import { BiTrash } from "react-icons/bi";
+import { useFetch } from "../../hooks/useFetch";
+import { User } from "lucide-react";
+import { useAuth } from "../../hooks/useAuth";
+import { useAction } from "../../hooks/useAction";
 
-const Items = () => {
+const Items = ({ data, isLoading, error }) => {
+  if (isLoading) return <p>loading...</p>;
+  if (error) return <p>{error}</p>;
+
+  const { mutate } = useAction(`/cart/delete`, "delete", "cart");
+
+  const deleteItem = (id) => {
+    mutate(id);
+    console.log(id);
+  };
+
   return (
     <div className="flex flex-col gap-4 lg:w-3/4">
       <div className="overflow-x-auto ">
@@ -16,29 +30,29 @@ const Items = () => {
             </tr>
           </thead>
           <tbody>
-            {[1, 2, 3].map((_, i) => (
+            {data.products?.map((el, i) => (
               <tr
                 key={i}
                 className="border-b hover:bg-gray-50 text-center transition-colors"
               >
                 <td className="p-3 border-b border-gray-300">
                   <img
-                    src="../assets/images/silver.png"
+                    src={el.product.image}
                     alt="Aventus"
                     loading="lazy"
                     className="w-16 h-16 object-cover rounded mx-auto"
                   />
                 </td>
                 <td className="p-3 border-b border-gray-300 font-bold">
-                  Aventus
+                  {el.product.title}
                 </td>
-                <td className="p-3 border-b border-gray-300">£300.00</td>
-                <td className="p-3 border-b border-gray-300">1</td>
+                <td className="p-3 border-b border-gray-300">${el.price}</td>
+                <td className="p-3 border-b border-gray-300">{el.quantity}</td>
                 <td className="p-3 border-b border-gray-300">
                   <div className="flex items-center justify-center gap-4">
-                    <span>£300.00</span>
+                    <span>${el.total}</span>
                     <button className="text-red-500 hover:text-red-700 transition">
-                      <BiTrash size={20} />
+                      <BiTrash size={20} onClick={() => deleteItem(el._id)} />
                     </button>
                   </div>
                 </td>

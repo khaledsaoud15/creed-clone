@@ -4,8 +4,22 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { useQuery } from "@tanstack/react-query";
+import { url } from "../../utils/baseUrl";
+import { Link } from "react-router-dom";
 
-const Proposal = () => {
+const Proposal = ({ product }) => {
+  const { data, isLoading, err } = useQuery({
+    queryKey: ["proposal", product?.title],
+    queryFn: async () => {
+      const { data } = await url.get("/products/get");
+      return data.filter((el) => el.title !== product.title);
+    },
+  });
+
+  if (isLoading) return <p>loading..</p>;
+  if (err) return <p>Failed to load products</p>;
+
   return (
     <section className="relative flex flex-col gap-8 w-full h-fit">
       <h1 className="w-fit mx-auto text-xl md:text-2xl lg:text-3xl font-inknut font-bold">
@@ -30,12 +44,9 @@ const Proposal = () => {
         pagination={{ clickable: true }}
         className=" w-full !static"
       >
-        {products.map((p, i) => (
+        {data?.map((p, i) => (
           <SwiperSlide key={i}>
-            <div
-              className=" w-full h-fit flex flex-col gap-4 p-2 md:p-4 lg:p-6 rounded hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
-              key={i}
-            >
+            <div className=" w-full h-fit flex flex-col gap-4 p-2 md:p-4 lg:p-6 rounded hover:bg-gray-100 hover:shadow-xl transition-all duration-300">
               <img
                 src={p.image}
                 alt={p.title}
@@ -49,14 +60,16 @@ const Proposal = () => {
                 <span className="text-xs text-gray-500">{p.type}</span>
                 <span className="text-gray-500 text-xs flex gap-2 justify-center">
                   <span className="font-bold text-black font-inknut">
-                    {p.price[0].toFixed(2)}£
+                    ${p.price[0].toFixed(2)}
                   </span>{" "}
                   for {p.size[0]}ml
                 </span>
               </div>
-              <button className="w-full py-2 bg-yellow-500 rounded shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500 font-medium">
-                see more
-              </button>
+              <Link to={`/product/${p._id}`}>
+                <button className="w-full py-2 bg-yellow-500 rounded shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500 font-medium">
+                  see more
+                </button>
+              </Link>
             </div>
           </SwiperSlide>
         ))}

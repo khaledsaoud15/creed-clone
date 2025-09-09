@@ -3,8 +3,13 @@ import Navbar from "../components/Navbar";
 import Items from "../components/cart/Items";
 import Footer from "../components/Footer";
 import Check from "../components/cart/Check";
+import { useAuth } from "../hooks/useAuth";
+import { useFetch } from "../hooks/useFetch";
 
 const Cart = () => {
+  const { user } = useAuth();
+
+  const { data, isLoading, error } = useFetch(`/cart/get/${user?._id}`, "cart");
   return (
     <>
       <Navbar />
@@ -13,8 +18,8 @@ const Cart = () => {
           Shopping Cart
         </h1>
         <section className="relative  flex flex-col gap-8 lg:flex-row lg:justify-between">
-          <Items />
-          <Check />
+          <Items data={data} isLoading={isLoading} error={error} />
+          <Check userId={user?._id} cartId={data?._id} data={data} />
         </section>
       </div>
       <Footer />

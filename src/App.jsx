@@ -7,6 +7,8 @@ import ScrollToTop from "./utils/ScrollToTop";
 import useLenis from "./hooks/useLenis";
 import Perfumes from "./pages/Perfumes";
 import Cart from "./pages/Cart";
+import TrackOrder from "./pages/TrackOrder";
+import OTP from "./pages/OTP";
 
 const App = () => {
   useLenis();
@@ -20,6 +22,8 @@ const App = () => {
         <Route path="/product/:id" element={<Productpage />} />
         <Route path="/perfumes" element={<Perfumes />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/order" element={<TrackOrder />} />
+        <Route path="/otp" element={<OTP />} />
       </Routes>
     </BrowserRouter>
   );

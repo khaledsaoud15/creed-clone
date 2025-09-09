@@ -1,27 +1,40 @@
-import React, { useState } from "react";
-import { products } from "../../utils/data";
+import React, { useEffect, useState } from "react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
-const ProductsPagination = () => {
-  const itemsPerPage = 8;
-  const totalPages = Math.ceil(products.length / itemsPerPage);
+const ProductsPagination = ({ products, val }) => {
+  const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
+  const itemsPerPage = 8;
 
-  const handleNext = () => {
-    setPage((prev) => (prev === totalPages ? 1 : prev + 1));
-  };
+  useEffect(() => {
+    if (val === "all") {
+      setData(products);
+    } else {
+      setData(
+        products.filter((el) => el.category.toLowerCase() === val.toLowerCase())
+      );
+    }
+    setPage(1);
+  }, [val, products]);
 
-  const handlePrev = () => {
-    setPage((prev) => (prev === 1 ? totalPages : prev - 1));
-  };
+  const totalPages = Math.max(1, Math.ceil(data.length / itemsPerPage));
 
   const startIndex = (page - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
+  const handleNext = () => {
+    if (page < totalPages) setPage((prev) => prev + 1);
+  };
+
+  const handlePrev = () => {
+    if (page > 1) setPage((prev) => prev - 1);
+  };
+
   return (
     <section className="px-8 md:px-12 lg:px-24 space-y-8 pt-8 pb-22">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 w-full h-fit">
-        {products.slice(startIndex, endIndex).map((p, i) => (
+        {data.slice(startIndex, endIndex).map((p, i) => (
           <div
             key={i}
             className="w-full h-fit flex flex-col gap-4 p-2 md:p-4 lg:p-6 rounded hover:bg-gray-100 hover:shadow-xl transition-all duration-300"
@@ -44,9 +57,11 @@ const ProductsPagination = () => {
                 for {p.size[0]}ml
               </span>
             </div>
-            <button className="w-full py-2 bg-yellow-500 rounded shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500 font-medium">
-              See More
-            </button>
+            <Link to={`/product/${p._id}`}>
+              <button className="w-full py-2 bg-yellow-500 rounded shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500 font-medium">
+                See More
+              </button>
+            </Link>
           </div>
         ))}
       </div>

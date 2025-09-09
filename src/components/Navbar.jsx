@@ -1,9 +1,12 @@
-import { Menu, X } from "lucide-react";
+import { Menu, ShoppingCart, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
+  const { user } = useAuth();
 
   return (
     <nav className="flex items-center justify-between relative px-8 md:px-12 lg:px-24 h-24 w-full md:static z-50">
@@ -23,12 +26,22 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center gap-4">
-        <Link
-          to="/login"
-          className="w-fit px-4 py-2 bg-yellow-500 rounded shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500"
-        >
-          Log in
-        </Link>
+        {user ? (
+          <Link
+            to="/cart"
+            className="flex items-center gap-2 w-fit cursor-pointer"
+          >
+            <span>Bag</span>
+            <ShoppingCart className="w-4 h-4" />
+          </Link>
+        ) : (
+          <Link
+            to="/login"
+            className="w-fit px-4 py-2 bg-yellow-500 rounded shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500"
+          >
+            Log in
+          </Link>
+        )}
         {active ? (
           <X
             onClick={() => setActive(false)}

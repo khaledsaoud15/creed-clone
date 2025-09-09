@@ -1,12 +1,43 @@
-import { Eye } from "lucide-react";
-import React from "react";
-import { BsEye } from "react-icons/bs";
-import { GoEyeClosed } from "react-icons/go";
+import { useEffect, useState } from "react";
 import { IoMdEye } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
+import { useAction } from "../hooks/useAction";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const { user, loading } = useAuth();
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: "",
+  });
+
+  const { mutate } = useAction("/auth/login", "post", "user");
+
+  const handleInputs = (e) => {
+    setInputs((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    mutate(inputs);
+    navigate("/");
+  };
+
+  const handleGoogleLogin = () => {
+    window.location.href = "http://localhost:3000/api/v1/auth/google";
+  };
+
+  useEffect(() => {
+    if (!loading && user) {
+      navigate("/");
+    }
+  }, [loading, user, navigate]);
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <div className="flex flex-col h-fit py-8 absolute top-1/2 left-1/2 -translate-1/2 w-full  px-8 gap-6 md:w-1/3">
@@ -22,6 +53,8 @@ const Login = () => {
                 type="email"
                 className="py-2 w-4/5 outline-0"
                 placeholder="example@mail.com"
+                name="email"
+                onChange={handleInputs}
               />
               <MdEmail />
             </div>
@@ -33,16 +66,24 @@ const Login = () => {
                 type="password"
                 className="py-2 w-4/5 outline-0"
                 placeholder="********"
+                name="password"
+                onChange={handleInputs}
               />
               <IoMdEye />
             </div>
             <span className="text-gray-500 underline">Forgot password?</span>
           </div>
           <div className="flex flex-col gap-4 w-full">
-            <button className="w-full py-3 rounded bg-yellow-500  shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500 font-medium">
+            <button
+              onClick={handleLogin}
+              className={`w-full py-3 rounded bg-yellow-500 shadow-lg cursor-pointer hover:bg-yellow-300 active:bg-white active:ring-offset-2 active:ring-2 active:ring-yellow-500 active:text-yellow-500 font-medium`}
+            >
               Log in
             </button>
-            <button className="flex items-center gap-2 rounded border shadow-lg justify-center py-3 font-medium cursor-pointer hover:bg-gray-100 active:bg-white active:ring-offset-2 active:ring-2 active:ring-gray-500 active:text-gray-500 bg-white">
+            <button
+              onClick={handleGoogleLogin}
+              className="flex items-center gap-2 rounded border shadow-lg justify-center py-3 font-medium cursor-pointer hover:bg-gray-100 active:bg-white active:ring-offset-2 active:ring-2 active:ring-gray-500 active:text-gray-500 bg-white"
+            >
               <img
                 src="./assets/images/google-icon.png"
                 alt="google icon"
