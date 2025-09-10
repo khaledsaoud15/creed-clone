@@ -6,6 +6,8 @@ const Newcollection = () => {
     new: true,
   });
 
+  console.log(data);
+
   if (isLoading) return <p>is Loading...</p>;
   if (error) return <p>{error}</p>;
 
