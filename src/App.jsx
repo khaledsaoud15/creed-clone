@@ -9,6 +9,7 @@ import Perfumes from "./pages/Perfumes";
 import Cart from "./pages/Cart";
 import TrackOrder from "./pages/TrackOrder";
 import OTP from "./pages/OTP";
+import Success from "./pages/Success";
 
 const App = () => {
   useLenis();
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<TrackOrder />} />
         <Route path="/otp" element={<OTP />} />
+        <Route path="/success" element={<Success />} />
       </Routes>
     </BrowserRouter>
   );
