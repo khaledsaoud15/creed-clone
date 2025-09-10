@@ -1,6 +1,6 @@
 import { Menu, ShoppingCart, X } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { FaShoppingCart } from "react-icons/fa";
 
@@ -17,23 +17,35 @@ const Navbar = () => {
           active ? "h-fit py-4" : "h-0"
         } w-full md:static md:flex-row md:gap-10 md:items-center md:w-fit md:h-auto md:py-0`}
       >
-        <Link to="/" className="font-medium underline">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            ` ${isActive ? "underline font-bold text-black" : ""}`
+          }
+        >
           Home
-        </Link>
+        </NavLink>
         <a href="">New</a>
-        <Link to="/perfumes">Perfumes</Link>
+        <NavLink
+          to="/perfumes"
+          className={({ isActive }) =>
+            ` ${isActive ? "underline font-semibold text-black" : ""}`
+          }
+        >
+          Perfumes
+        </NavLink>
         <a href="">Accessories</a>
       </div>
 
       <div className="flex items-center gap-4">
         {user ? (
-          <Link
+          <NavLink
             to="/cart"
             className="flex items-center gap-2 w-fit cursor-pointer"
           >
             <span>Bag</span>
             <ShoppingCart className="w-4 h-4" />
-          </Link>
+          </NavLink>
         ) : (
           <Link
             to="/login"
