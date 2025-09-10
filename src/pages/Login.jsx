@@ -4,6 +4,7 @@ import { MdEmail } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { useAction } from "../hooks/useAction";
+import { baseUrl } from "../utils/baseUrl";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ const Login = () => {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:3000/api/v1/auth/google";
+    window.location.href = `${baseUrl}/auth/google`;
   };
 
   useEffect(() => {
