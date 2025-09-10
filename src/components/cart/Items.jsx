@@ -19,7 +19,7 @@ const Items = ({ data, isLoading, error }) => {
   return (
     <div className="flex flex-col gap-4 lg:w-3/4">
       {data.products?.length === 0 ? (
-        <p>Cart is empty</p>
+        <p className="text-xl font-semibold">Cart is empty</p>
       ) : (
         <>
           <div className="overflow-x-auto ">
