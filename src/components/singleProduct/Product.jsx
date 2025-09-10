@@ -55,7 +55,7 @@ const Product = ({ data, toastFn }) => {
             src={data?.image}
             alt={data?.title}
             loading="lazy"
-            className="w-1/2 h-[50vh] object-cover mx-auto md:h-full"
+            className="w-1/2 h-[30vh] object-cover mx-auto md:h-full"
           />
         </div>
         <div className="flex flex-col gap-4 w-full">
